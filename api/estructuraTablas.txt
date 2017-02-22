@@ -1,0 +1,190 @@
+tabla artículo                        
+id INT
+articulo_id INT
+codigo VARCHAR(20)
+categoria_id INT
+marca_id INT
+descripcion VARCHAR(200)
+formato_id INT
+cantidad INT
+unidad_id INT
+articulo TEXT
+estado INT 
+
+                       
+tabla categoria                        
+id INT                        
+nombre VARCHAR(50)
+
+tabla marca                        
+id INT
+nombre VARCHAR(100)  
+                      
+tabla formato                        
+id INT
+nombre VARCHAR(100)    
+                    
+tabla unidad                        
+id INT
+nombre VARCHAR(100)
+
+tabla: cliente
+id INT
+rut VARCHAR(10)
+nombre VARCHAR(200)
+giro VARCHAR(200)
+direccion VARCHAR(200)
+comuna VARCHAR(200)
+telefono VARCHAR(15)
+email VARCHAR(100)                        
+
+tabla: clienteContacto
+id INT
+cliente_id INT
+rut VARCHAR(10)	
+nombre VARCHAR(200)
+cargo VARCHAR(200)
+celular VARCHAR(15)
+email VARCHAR(100)                        
+
+tabla: proveedor
+id INT
+rut VARCHAR(10)
+nombre VARCHAR(200)
+direccion VARCHAR(200)
+comuna VARCHAR(200)
+telefono VARCHAR(15)
+email VARCHAR(100)                        
+
+tabla: proveedorVendedor
+id INT
+proveedor_id INT
+rut VARCHAR(10)
+nombre VARCHAR(200)
+celular VARCHAR(15)
+email VARCHAR(100)                        
+
+tabla: ventaCab
+id INT
+usuario_id INT *
+boleta LONG
+fecha DATETIME
+total LONG
+tarjeta INT                        
+
+tabla: ventaDet
+id INT
+venta_id INT
+articulo_id INT
+cantidad INT
+precio LONG
+descuento LONG
+total LONG
+
+                     
+tabla cierreCab
+id INT
+fecha DATETIME
+usuario_id INT
+apertura LONG
+total LONG
+efectivo LONG
+tarjeta LONG
+contabilizacion LONG
+diferencia LONG  
+                      
+tabla: cierreDet
+id INT
+cierre_id INT
+venta_id INT
+ventaDet_id INT
+articulo_id INT
+cantidad INT
+precio LONG
+descuento LONG
+total LONG                        
+
+tabla: apertura
+id INT
+fecha DATETIME
+usuario_id INT
+apertura LONG
+
+tabla: usuario
+id INT
+nombres VARCHAR(200)
+apellidoPaterno VARCHAR(200)
+apellidoMaterno VARCHAR(200)
+cargo VARCHAR(200)
+login VARCHAR(20)
+pass VARCHAR(20)
+
+tabla: movimiento
+id INT
+fecha DATETIME
+usuario_id INT
+movimientoTipo_id INT
+articulo_id INT
+cantidad INT                        
+
+tabla: stock
+id int
+articulo_id INT
+fecha DATETIME
+stock INT
+costo LONG
+venta LONG                        
+
+tabla: facturaProveedorCab
+id INT
+fecha DATETIME
+usuario_id INT
+proveedor_rut VARCHAR(10)
+proveedor_nombre VARCHAR(200)
+proveedor_direccion VARCHAR(200)
+proveedor_comuna VARCHAR(200)
+proveedor_telefono VARCHAR(15)
+proveedor_email VARCHAR(100)
+neto LONG
+iva LONG
+total LONG                        
+
+tabla: facturaProveedorDet
+id INT
+factura_id INT
+articulo_id INT
+codigo INT
+descripcion VARCHAR(200)
+cantidad INT
+neto LONG                        
+
+tabla: facturaClienteCab
+id INT
+fecha DATETIME
+usuario_id INT
+cliente_rut VARCHAR(10)
+cliente_nombre VARCHAR(200)
+cliente_giro VARCHAR(200)
+cliente_direccion VARCHAR(200)
+cliente_comuna VARCHAR(200)
+cliente_telefono VARCHAR(15)
+cliente_email VARCHAR(100)
+subTotalNeto LONG
+descuento LONG
+totalNeto LONG
+iva LONG
+total LONG                        
+
+tabla: facturaClienteDet
+id INT
+factura_id INT
+articulo_id INT
+cantidad INT
+subTotalNeto LONG
+descuento LONG
+totalNeto LONG
+
+tabla: movimientoTipo
+id INT
+nombre VARCHAR(100)
+signo INT

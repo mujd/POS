@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Movimiento</title>
+        <script src="_js/jquery.js"></script>
+        <link rel="stylesheet" href="_css/bootstrap.min.css"/>
+        <script src="_js/bootstrap.min.js"></script>         
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <div id="form">
+           <div>
+               <label>Fecha</label>
+               <input type="datetime-local" name="fecha" id="txtFecha">
+           </div>
+           <div>
+               <label>Usuario</label>
+               <input type="text" name="usuario" id="txtUsuario">
+           </div>
+           <div>
+                <label>Tipo Movimiento</label>
+                <select name="movimientoTipo" id="ddlMovimientoTipo">
+                    <option value=""></option>
+                </select>
+           </div>
+           <div>
+                <label>Articulo</label>
+                <select name="articulo" id="ddlArticulo">
+                    <option value=""></option>
+                </select>
+           </div>
+           <div>
+               <label>Cantidad</label>
+               <input type="text" name="cantidad" id="txtCantidad">
+           </div>
+           <button id="btnRegistrar">Registrar</button>
+        </div>
+        
+    </body>
+</html>
