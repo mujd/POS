@@ -10,6 +10,9 @@ $config['db']['user']   = "root";
 $config['db']['pass']   = "";
 $config['db']['dbname'] = "pos";
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
 
 $app = new Slim\App(["settings" => $config]);
 

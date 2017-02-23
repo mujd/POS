@@ -1,1 +1,0 @@
-manProveedorVendedorDet.js

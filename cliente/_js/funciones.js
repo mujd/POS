@@ -1,5 +1,5 @@
 var gIP = "localhost"
-var gPuerto = "8080";
+var gPuerto = "32000";
 var gURL = "http://" + gIP + ":" + gPuerto;
 
 $.ajaxSetup({
@@ -7,9 +7,11 @@ $.ajaxSetup({
     async: false
 });
 
-$( document ).ready(function() {
-	var jsonArticulo = apiGetArticulo();
-	alert(jsonArticulo[0].articulo);
+$(document).ready(function() {
+	proveedorCargarDetalle();
+	proveedorCargarListado();
+	
+	
 });
 
 function apiGET(url) {
@@ -26,6 +28,10 @@ function apiGET(url) {
 	}
 }
 
-function apiGetArticulo() {
-    return apiGET(gURL + "/articulo");
+function apiPOST(url, info) {
+    var retorno = null;
+    $.post(url, info, function(data) {
+        retorno = data;
+    });
+    return retorno;
 }

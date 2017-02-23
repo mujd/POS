@@ -25,11 +25,11 @@ $app->put('/proveedorVendedor/[{id}]', function ($request, $response, $args) {
     $sql = "UPDATE proveedorvendedor SET proveedor_id = :proveedor_id, rut = :rut, nombre = :nombre, celular = :celular, email = :email WHERE id = :id";
     $sth = $this->db->prepare($sql);
     $sth->bindParam("id", $args['id']);
-    $sth->bindParam("proveedor_id", $args['proveedor_id']);
-    $sth->bindParam("rut", $args['rut']);
+    $sth->bindParam("proveedor_id", $input['proveedor_id']);
+    $sth->bindParam("rut", $input['rut']);
     $sth->bindParam("nombre", $input['nombre']);
-    $sth->bindParam("celular", $args['celular']);
-    $sth->bindParam("email", $args['email']);
+    $sth->bindParam("celular", $input['celular']);
+    $sth->bindParam("email", $input['email']);
     $sth->execute();
     $input['id'] = $args['id'];
     return $this->response->withJson($input);
