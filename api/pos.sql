@@ -340,8 +340,8 @@ CREATE TABLE `unidad` (
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nombres` varchar(200) NOT NULL,
-  `apellidopaterno` varchar(200) NOT NULL,
-  `apellidomaterno` varchar(200) NOT NULL,
+  `apellidoPaterno` varchar(200) NOT NULL,
+  `apellidoMaterno` varchar(200) NOT NULL,
   `cargo` varchar(200) NOT NULL,
   `login` varchar(20) NOT NULL,
   `pass` varchar(20) NOT NULL
@@ -351,7 +351,7 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nombres`, `apellidopaterno`, `apellidomaterno`, `cargo`, `login`, `pass`) VALUES
+INSERT INTO `usuario` (`id`, `nombres`, `apellidoPaterno`, `apellidoMaterno`, `cargo`, `login`, `pass`) VALUES
 (1, 'Maximiliano André', 'Rojas', 'Flores', 'Jefe de local', 'max', 'max');
 
 -- --------------------------------------------------------
