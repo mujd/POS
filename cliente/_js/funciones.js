@@ -8,10 +8,9 @@ $.ajaxSetup({
 });
 
 $(document).ready(function() {
-	proveedorCargarDetalle();
-	proveedorCargarListado();
-	
-	
+
+	usuarioCargarDetalle();
+	usuarioCargarListado();	
 });
 
 function apiGET(url) {

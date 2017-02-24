@@ -3,6 +3,12 @@ function usuarioCargarDetalle() {
 		$("#btnRegistrar").unbind("click");
 		$("#btnRegistrar").click(function(){
 			usuarioRegistrar();
+			$("#txtNombres").val("");
+			$("#txtApellidoPaterno").val("");
+			$("#txtApellidoMaterno").val("");
+			$("#txtCargo").val("");
+			$("#txtLogin").val("");
+			$("#txtPass").val("");
 		});
 	});
 }
@@ -18,12 +24,7 @@ function usuarioCargarListado() {
 }
 
 function usuarioRegistrar() {
-	usuarioPost($("#txtNombre").val());
-	usuarioPost($("#txtApellidoPaterno").val());
-	usuarioPost($("#txtApellidoMaterno").val());
-	usuarioPost($("#txtCargo").val());
-	usuarioPost($("#txtLogin").val());
-	usuarioPost($("#txtPass").val());
+	usuarioPost($("#txtNombres").val(), $("#txtApellidoPaterno").val(), $("#txtApellidoMaterno").val(), $("#txtCargo").val(), $("#txtLogin").val(), $("#txtPass").val());
 	usuarioCargarListado();
 }
 
@@ -32,6 +33,6 @@ function usuarioGet() {
 }
 
 function usuarioPost(nombres, apellidoPaterno, apellidoMaterno, cargo, login, pass) {
-    var info = { 'nombres': nombres }
+    var info = { 'nombres': nombres, 'apellidoPaterno':apellidoPaterno, 'apellidoMaterno':apellidoPaterno, 'cargo':cargo, 'login':login, 'pass':pass }
     return apiPOST(gURL + "/usuario", info);
 }

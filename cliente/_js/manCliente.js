@@ -18,7 +18,7 @@ function clienteCargarListado() {
 }
 
 function clienteRegistrar() {
-	clientePost($("#txtNombre").val());
+	clientePost($("#txtRut").val(), $("#txtNombre").val(), $("#txtGiro").val(), $("#txtDireccion").val(), $("#txtComuna").val(), $("#txtTelefono").val(), $("#txtEmail").val());
 	clienteCargarListado();
 }
 
@@ -26,7 +26,7 @@ function clienteGet() {
     return apiGET(gURL + "/cliente");
 }
 
-function clientePost(nombre) {
-    var info = { 'nombre': nombre }
+function clientePost(rut, nombre, giro, direccion, comuna, telefono, email) {
+    var info = { 'rut': rut , 'nombre': nombre, 'giro': giro, 'direccion': direccion, 'comuna': comuna, 'telefono': telefono,'email': email}
     return apiPOST(gURL + "/cliente", info);
 }

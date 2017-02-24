@@ -8,7 +8,7 @@ $app->get('/usuario', function ($request, $response, $args) {
 
 $app->post('/usuario', function ($request, $response) {
     $input = $request->getParsedBody();
-    $sql = "INSERT INTO usuario (nombres, apellidoPaterno, apellidoMaterno, cargo, login, pass) VALUES (:rut, :nombres, :apellidoPaterno, :apellidoMaterno, :cargo, :login, :pass)";
+    $sql = "INSERT INTO usuario (nombres, apellidoPaterno, apellidoMaterno, cargo, login, pass) VALUES ( :nombres, :apellidoPaterno, :apellidoMaterno, :cargo, :login, :pass)";
     $sth = $this->db->prepare($sql);
     $sth->bindParam("nombres", $input['nombres']);
     $sth->bindParam("apellidoPaterno", $input['apellidoPaterno']);

@@ -18,12 +18,7 @@ function proveedorCargarListado() {
 }
 
 function proveedorRegistrar() {
-	proveedorPost($("#txtRut").val());
-	proveedorPost($("#txtNombre").val());
-	proveedorPost($("#txtDireccion").val());
-	proveedorPost($("#txtComuna").val());
-	proveedorPost($("#txtTelefono").val());
-	proveedorPost($("#txtEmail").val());
+	proveedorPost($("#txtRut").val(), $("#txtNombre").val(), $("#txtDireccion").val(), $("#txtComuna").val(), $("#txtTelefono").val(), $("#txtEmail").val());
 	proveedorCargarListado();
 }
 
@@ -35,3 +30,5 @@ function proveedorPost(rut, nombre, direccion, comuna, telefono, email) {
     var info = { 'rut': rut , 'nombre': nombre, 'direccion': direccion, 'comuna': comuna, 'telefono': telefono,'email': email}
     return apiPOST(gURL + "/proveedor", info);
 }
+
+

@@ -18,15 +18,16 @@ function clienteContactoCargarListado() {
 }
 
 function clienteContactoRegistrar() {
-	clienteContactoPost($("#txtNombre").val());
-	clienteContactoCargarListado();
+	clienteContactoPost($("#ddlCliente").val(), $("#txtRut").val(), $("#txtNombre").val(), $("#txtCargo").val(), $("#txtCelular").val(), $("#txtEmail").val());
+	clienteCargarListado();
 }
+
 
 function clienteContactoGet() {
     return apiGET(gURL + "/clienteContacto");
 }
 
-function clienteContactoPost(nombre) {
-    var info = { 'nombre': nombre }
+function clienteContactoPost(cliente_id, rut, nombre, cargo, celular, email) {
+    var info = { 'cliente_id':cliente_id, 'rut': rut , 'nombre': nombre, 'cargo': cargo, 'celular': celular,'email': email}
     return apiPOST(gURL + "/clienteContacto", info);
 }

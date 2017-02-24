@@ -17,16 +17,16 @@ function stockCargarListado() {
 	});
 }
 
-function stockRegistrar() {
-	stockPost($("#txtNombre").val());
-	stockCargarListado();
+function proveedorRegistrar() {
+	proveedorPost($("#ddlArticulo").val(), $("#txtFecha").val(), $("#txtStock").val(), $("#txtCosto").val(), $("#txtVenta").val());
+	proveedorCargarListado();
 }
 
 function stockGet() {
     return apiGET(gURL + "/stock");
 }
 
-function stockPost(nombre) {
-    var info = { 'nombre': nombre }
+function stockPost(articulo_id, fecha, stock, costo, venta) {
+    var info = { 'articulo_id': articulo_id, 'fecha': fecha, 'stock': stock, 'costo': costo, 'venta': venta }
     return apiPOST(gURL + "/stock", info);
 }

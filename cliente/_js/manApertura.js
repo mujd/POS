@@ -18,7 +18,7 @@ function aperturaCargarListado() {
 }
 
 function aperturaRegistrar() {
-	aperturaPost($("#txtNombre").val());
+	aperturaPost($("#txtFecha").val(), $("#ddlUsuario").val(), $("#txtApertura").val());
 	aperturaCargarListado();
 }
 
@@ -26,7 +26,7 @@ function aperturaGet() {
     return apiGET(gURL + "/apertura");
 }
 
-function aperturaPost(nombre) {
-    var info = { 'nombre': nombre }
+function aperturaPost(fecha, usuario_id, apertura) {
+    var info = { 'fecha': fecha, 'usuario_id':usuario_id, 'apertura':apertura }
     return apiPOST(gURL + "/apertura", info);
 }

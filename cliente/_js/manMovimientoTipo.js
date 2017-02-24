@@ -18,7 +18,7 @@ function movimientoTipoCargarListado() {
 }
 
 function movimientoTipoRegistrar() {
-	movimientoTipoPost($("#txtNombre").val());
+	movimientoTipoPost($("#txtNombre").val(), $("#txtSigno").val());
 	movimientoTipoCargarListado();
 }
 
@@ -26,7 +26,7 @@ function movimientoTipoGet() {
     return apiGET(gURL + "/movimientoTipo");
 }
 
-function movimientoTipoPost(nombre) {
-    var info = { 'nombre': nombre }
+function movimientoTipoPost(nombre, signo) {
+    var info = { 'nombre': nombre, 'signo': signo}
     return apiPOST(gURL + "/movimientoTipo", info);
 }

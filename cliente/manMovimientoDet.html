@@ -3,11 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Movimiento</title>
-        <link rel="stylesheet" type="text/css" href="_css/estilos.css"/>
-        <script type="text/javascript" src="_js/jquery.min.js"></script>         
-        <script type="text/javascript" src="_js/jquery-ui.min.js"></script>
-        <!--<script type="text/javascript" src="_js/manArticulo.js"></script>-->
-        <script type="text/javascript" src="_js/manMovimiento.js"></script>
+        
     </head>
     <body>
         <div id="form">
@@ -16,8 +12,10 @@
                <input type="datetime-local" name="fecha" id="txtFecha">
            </div>
            <div>
-               <label>Usuario</label>
-               <input type="text" name="usuario" id="txtUsuario">
+                <label>Usuario</label>
+                <select name="usuario" id="ddlUsuario">
+                    <option value=""></option>
+                </select>
            </div>
            <div>
                 <label>Tipo Movimiento</label>
